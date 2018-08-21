@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-
 import MediaManager, { MediaConsumer, MediaCondition, MediaSlot } from '../src';
 
 const queries = {
@@ -12,13 +11,18 @@ class App extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      isMediaSlotSrcVisisble: false
+      isMediaSlotSrcVisisble: false,
+      isMediaConsumerSrcVisisble: false
     };
     this.toggleMediaSlotSrc = this.toggleMediaSlotSrc.bind(this);
+    this.toggleMediaConsumerSrc = this.toggleMediaConsumerSrc.bind(this);
   }
 
   toggleMediaSlotSrc() {
     this.setState({ isMediaSlotSrcVisisble: !this.state.isMediaSlotSrcVisisble });
+  }
+  toggleMediaConsumerSrc() {
+    this.setState({ isMediaConsumerSrcVisisble: !this.state.isMediaConsumerSrcVisisble });
   }
 
   render() {
@@ -70,7 +74,7 @@ class App extends React.Component {
 
           {this.state.isMediaSlotSrcVisisble && (
             <pre>
-              <code>
+              <code contentEditable spellCheck={false}>
                 {`
 <MediaSlot
   small={key => (
@@ -155,6 +159,35 @@ class App extends React.Component {
               </Fragment>
             )}
           </MediaConsumer>
+
+          <button onClick={this.toggleMediaConsumerSrc}>
+            {this.state.isMediaConsumerSrcVisisble ? 'Hide' : 'Show'} source
+          </button>
+
+          {this.state.isMediaConsumerSrcVisisble && (
+            <pre>
+              <code contentEditable spellCheck={false}>
+                {`
+<MediaConsumer>
+{({ small, medium, large }) => (
+  <Fragment>
+    {small && (
+      <div className="box small">
+        This is <strong>small</strong> screen breakpoint
+      </div>
+    )}
+    {(medium || large) && (
+      <div className="box medium-large">
+        This is <strong>medium or large</strong> screen breakpoint
+      </div>
+    )}
+  </Fragment>
+)}
+</MediaConsumer>
+`}
+              </code>
+            </pre>
+          )}
         </main>
       </MediaManager>
     );
