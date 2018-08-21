@@ -1,16 +1,15 @@
-### React Media Match
+# React Media Match
 
-===============================
 
 Easily use CSS Media Queries and React's createContext API to build responsive layouts for any breakpoint or device. Use convenient components or simply extend to create your own.
 
-# Installation
+## Installation
 
 ```
 $ npm install @dg/react-media-match
 ```
 
-# Setup
+## Setup
 
 Setup MediaManager once at top or root level providing it with queries object.
 The keys you defined in the queries object are referenced later.
@@ -30,9 +29,7 @@ const queries = {
 </MediaManager>
 ```
 
-# Using slot component
-
-===========================
+## Using slot component
 
 Slot component evaluates props which match keys defined in the initial queries
 object and render the prop if the current media query is evaluated to true.
@@ -48,9 +45,7 @@ import { MediaSlot } from '@dg/react-media-match';
 />
 ```
 
-# Using conditional component
-
-===========================
+## Using conditional component
 
 Conditional component evaluates conditions of `is`, `not`, `any` and `none` against
 the initial queries object keys; and returns its children if the condition is satisfied.
@@ -76,9 +71,7 @@ import { MediaCondition } from '@dg/react-media-match';
 </MediaCondition>
 ```
 
-# Create your own custom components
-
-=================================
+## Create your own custom components
 
 ```
 import React from 'react';
@@ -90,9 +83,7 @@ const Mobile = ({children}) => <MediaCondition is="mobile">{children}</MediaCond
 </Mobile>
 ```
 
-# Using lower-level consumer component
-
-====================================
+## Using lower-level consumer component
 
 Consumer component provides the current state of media queries for fine grained control.
 
