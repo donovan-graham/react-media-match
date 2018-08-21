@@ -19,7 +19,7 @@ const config = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'demo'),
+    contentBase: path.join(__dirname, 'dist'),
     port: 3000,
     host: '0.0.0.0',
     disableHostCheck: true,
@@ -28,7 +28,7 @@ const config = {
     hot: true
   },
   plugins: [
-    new CleanWebpackPlugin(['demo']),
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: './example/index.html'
     }),
@@ -37,7 +37,7 @@ const config = {
   ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'demo')
+    path: path.resolve(__dirname, 'dist')
   }
 };
 

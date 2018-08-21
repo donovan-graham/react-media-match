@@ -1,6 +1,10 @@
 .*
 **/*.test.js
+
 docker-compose.yml
+testSetup.js
+webpack.config.js
 
 /example
 /dist
+/__tests__
