@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <MediaManager queries={queries}>
         <main>
-          <h1>@dg/react-media-match</h1>
+          <h1>@donovan-graham/react-media-match</h1>
           <p>
             Use CSS Media Queries, window matchMedia API, and React's createContext API to build responsive layouts for
             any breakpoint or device.

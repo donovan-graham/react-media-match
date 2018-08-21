@@ -1,5 +1,5 @@
 {
-  "name": "@dg/react-media-match",
+  "name": "@donovan-graham/react-media-match",
   "version": "1.0.0",
   "description": "Use CSS Media Queries and React's createContext API to build responsive layouts for any breakpoint or device.",
   "author": "Donovan Graham <donovan@platform7.com>",

@@ -6,7 +6,7 @@ Easily use CSS Media Queries and React's createContext API to build responsive l
 ## Installation
 
 ```bash
-$ npm i @dg/react-media-match
+$ npm i @donovan-graham/react-media-match
 ```
 
 ## Setup
@@ -16,7 +16,7 @@ The keys you defined in the queries object are referenced later.
 
 ```jsx
 import React from 'react';
-import MediaManager from '@dg/react-media-match';
+import MediaManager from '@donovan-graham/react-media-match';
 
 const queries = {
   mobile: '(max-width: 599px)',
@@ -36,7 +36,7 @@ object and render the prop if the current media query is evaluated to true.
 
 ```jsx
 import React from 'react';
-import { MediaSlot } from '@dg/react-media-match';
+import { MediaSlot } from '@donovan-graham/react-media-match';
 
 <MediaSlot
   mobile={key => <p key={key}>**Is mobile slot</p>}
@@ -52,7 +52,7 @@ the initial queries object keys; and returns its children if the condition is sa
 
 ```jsx
 import React, { Fragment } from 'react';
-import { MediaCondition } from '@dg/react-media-match';
+import { MediaCondition } from '@donovan-graham/react-media-match';
 
 <MediaCondition is="mobile">
   <p>Is mobile</p>
@@ -75,7 +75,7 @@ import { MediaCondition } from '@dg/react-media-match';
 
 ```jsx
 import React from 'react';
-import { MediaCondition } from '@dg/react-media-match';
+import { MediaCondition } from '@donovan-graham/react-media-match';
 
 const Mobile = ({children}) => <MediaCondition is="mobile">{children}</MediaCondition>
 <Mobile>
@@ -89,7 +89,7 @@ Consumer component provides the current state of media queries for fine grained 
 
 ```jsx
 import React, { Fragment } from 'react';
-import { MediaConsumer } from '@dg/react-media-match';
+import { MediaConsumer } from '@donovan-graham/react-media-match';
 
 <MediaConsumer>
   {({ mobile, tablet, desktop }) => (
